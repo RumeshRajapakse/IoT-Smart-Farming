@@ -23,11 +23,11 @@ Serial.begin(9600);
  
 void loop() {
   //reading temperature and humidity from sensor
- float temp = dht1.readTemperature(); // temperature reading of the environment
- float humidity = dht1.readHumidity(); // humidity of the environment
+ float temp = dht2.readTemperature(); // temperature reading of the environment
+ float humidity = dht2.readHumidity(); // humidity of the environment
  float watertemp = dht2.readTemperature(); // temperature reading od water
- float ph = dht1.readHumidity(); // ph value of the water
- float tds = dht1.readTemperature(); // nutrients solved in water
+ float ph = dht2.readHumidity(); // ph value of the water
+ float tds = dht2.readTemperature(); // nutrients solved in water
  float co2 = dht2.readHumidity(); // CO2 concentration of the environment
  float wlvl = dht2.readTemperature(); // Water level at the plant roots
  float lux = dht2.readTemperature(); // light intensity recieved at plants
@@ -45,15 +45,12 @@ void loop() {
  Serial.print(",\"tds\":");
  Serial.print(tds);
  Serial.print(",\"co2\":");
- Serial.println(co2);
+ Serial.print(co2);
  Serial.print(",\"waterlevel\":");
- Serial.println(wlvl);
+ Serial.print(wlvl);
  Serial.print(",\"lux\":");
- Serial.println(lux);
-
- Serial.println("}");
-// Serial.print("hin=");
-// Serial.println(h2);
-
- delay(2500); // delay between reading each sensor data
+ Serial.print(lux);
+ Serial.print("}");
+ Serial.println();
+ delay(3500); // delay between reading each sensor data
 }
