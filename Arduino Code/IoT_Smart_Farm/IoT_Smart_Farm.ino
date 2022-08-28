@@ -1,14 +1,21 @@
 #include <BH1750.h>
 #include <Wire.h>
 #include "DHT.h"
-#define ENVTEMP A0  // read the environmental temperature and humidity
-#define watertemp A2
-#define co2sensor A1
-BH1750 lightMeter(0x23);
+
+#define ENVTEMP A0  // DHT11 sensor data pin connected to
+
+#define co2sensor A1 // co2 sensor data pin connected to
+
+#define watertemp A2 // water temp data pin connected to
+
+#define ph A3 // pH sensor data pin connected to
+
+BH1750 lightMeter(0x23); // address of the light sensor. SDL and SCL pins are connected to A4 and A5
+
 // configure co2 sensor
 int gas, co2lvl;
-// configure the ph sensor
 
+// configure the ph sensor
 float calibration_value = 21.34 - 0.45;
 int phval = 0; 
 unsigned long int avgval; 
@@ -22,12 +29,12 @@ float ph_act;
 DHT dht1(ENVTEMP, DHT1TYPE);
 
 void setup() {
-  Wire.begin();
+Wire.begin();
 Serial.begin(9600);
-  dht1.begin();
+dht1.begin();
 
-  //co2 sensor setup
-  pinMode(co2sensor, INPUT);
+//co2 sensor setup
+pinMode(co2sensor, INPUT);
 
   //error handling and reading light sensor
   if (lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE)) {
@@ -48,14 +55,14 @@ void loop() {
  if (lightMeter.measurementReady()) {
     float lux = lightMeter.readLightLevel();
     
- float watertemp = analogRead(watertemp); // temperature reading od water
+ float watertemp = analogRead(watertemp); // temperature reading of water
  float tds = dht1.readTemperature(); // nutrients solved in water
  float wlvl = dht1.readTemperature(); // Water level at the plant roots
 
  // read ph sensor values
 for(int i=0;i<10;i++) 
  { 
- buffer_arr[i]=analogRead(A1);
+ buffer_arr[i]=analogRead(A3);
  delay(30);
  }
  for(int i=0;i<9;i++)
