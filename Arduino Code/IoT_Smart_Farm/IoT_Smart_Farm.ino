@@ -16,7 +16,7 @@ BH1750 lightMeter(0x5C); // address of the light sensor. SDA to (20) and SCL to 
 int gas, co2lvl;
 
 // configure the ph sensor
-float calibration_value = 21.34 - 0.2;
+float calibration_value = 21.34;
 int phval = 0; 
 unsigned long int avgval; 
 int buffer_arr[10],temp;
