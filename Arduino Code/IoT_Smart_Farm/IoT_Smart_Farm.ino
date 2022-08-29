@@ -10,13 +10,13 @@
 
 #define ph A3 // pH sensor data pin connected to
 
-BH1750 lightMeter(0x23); // address of the light sensor. SDL and SCL pins are connected to A4 and A5
+BH1750 lightMeter(0x5C); // address of the light sensor. SDA to (20) and SCL to (21) pins are connected
 
 // configure co2 sensor
 int gas, co2lvl;
 
 // configure the ph sensor
-float calibration_value = 21.34 - 0.45;
+float calibration_value = 21.34 - 0.2;
 int phval = 0; 
 unsigned long int avgval; 
 int buffer_arr[10],temp;
@@ -37,7 +37,7 @@ dht1.begin();
 pinMode(co2sensor, INPUT);
 
   //error handling and reading light sensor
-  if (lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE)) {
+if (lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE)) {
     Serial.println(F("BH1750 Advanced begin"));
   } else {
     Serial.println(F("Error initialising BH1750"));
@@ -45,17 +45,14 @@ pinMode(co2sensor, INPUT);
 }
  
 void loop() {
-
-  
-  //reading temperature and humidity from sensor
- float temp = dht1.readTemperature(); // temperature reading of the environment
- float humidity = dht1.readHumidity(); // humidity of the environment
-
  // reading light sensor
  if (lightMeter.measurementReady()) {
-    float lux = lightMeter.readLightLevel();
+ float lux = lightMeter.readLightLevel();
     
- float watertemp = analogRead(watertemp); // temperature reading of water
+ //reading temperature and humidity from sensor
+ float envtemp = dht1.readTemperature(); // temperature reading of the environment
+ float humidity = dht1.readHumidity(); // humidity of the environment
+ float watertemp = dht1.readTemperature()-2; // temperature reading of water
  float tds = dht1.readTemperature(); // nutrients solved in water
  float wlvl = dht1.readTemperature(); // Water level at the plant roots
 
@@ -93,7 +90,7 @@ for(int i=0;i<10;i++)
   //Sensor values are printed through serial port in the json format
  
  Serial.print("{\"temp\":");
- Serial.print(temp);
+ Serial.print(envtemp);
  Serial.print(",\"humidity\":");
  Serial.print(humidity);
  Serial.print(",\"watertemp\":");
