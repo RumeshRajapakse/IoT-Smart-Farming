@@ -1,0 +1,658 @@
+[
+    {
+        "id": "4f0ee5ecd86a0ed5",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "909ef7b4846e7cb3",
+        "type": "serial in",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "Arduino",
+        "serial": "31b0f82e0b7eb5fc",
+        "x": 50,
+        "y": 400,
+        "wires": [
+            [
+                "714bbe4ecc1c1ad7"
+            ]
+        ]
+    },
+    {
+        "id": "714bbe4ecc1c1ad7",
+        "type": "json",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "Sensor Data.json",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 210,
+        "y": 400,
+        "wires": [
+            [
+                "b04c185bfacfaa7c",
+                "2e493b7ed12d8a7b"
+            ]
+        ]
+    },
+    {
+        "id": "9917d5cf4e8bae52",
+        "type": "ui_chart",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "",
+        "group": "7a574ddd70fc5f97",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "label": "Environment Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 960,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8ee67ed0705459a4",
+        "type": "ui_chart",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "",
+        "group": "7a574ddd70fc5f97",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "label": "Environment Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 970,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "89b9f1271c2305f7",
+        "type": "ui_chart",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "",
+        "group": "7a574ddd70fc5f97",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "label": "pH of Water",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 930,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "48e681c7a851fe63",
+        "type": "ui_chart",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "",
+        "group": "7a574ddd70fc5f97",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "label": "Water Nutrient Levels",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 960,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "20de0f8af98614b8",
+        "type": "ui_chart",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "",
+        "group": "7a574ddd70fc5f97",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "label": "CO2 Concentration",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 950,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "06a7847145e7c7c6",
+        "type": "ui_chart",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "",
+        "group": "7a574ddd70fc5f97",
+        "order": 14,
+        "width": 0,
+        "height": 0,
+        "label": "Water Level",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 930,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "05bb2c96e961bb04",
+        "type": "ui_chart",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "",
+        "group": "7a574ddd70fc5f97",
+        "order": 15,
+        "width": 0,
+        "height": 0,
+        "label": "Light intensity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 940,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b04c185bfacfaa7c",
+        "type": "function",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "function 2",
+        "func": "var data = JSON.parse(JSON.stringify(msg.payload));\ndata=msg;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 400,
+        "wires": [
+            [
+                "3325d0be196a9bcc",
+                "89264c50ebeb8fa9",
+                "64ad80cb460a4886",
+                "3812bfa70928c935",
+                "bb3a7a0979a98a98",
+                "eb473266c2da8ee7",
+                "66ddaba79bcb4ea7",
+                "b5c45c9ed8f98c74"
+            ]
+        ]
+    },
+    {
+        "id": "3325d0be196a9bcc",
+        "type": "function",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "watertemp",
+        "func": "msg.payload = msg.payload.watertemp;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 180,
+        "wires": [
+            [
+                "3f34bbd214ddab71"
+            ]
+        ]
+    },
+    {
+        "id": "89264c50ebeb8fa9",
+        "type": "function",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "Temperature",
+        "func": "msg.payload = msg.payload.temp;\nreturn msg;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 240,
+        "wires": [
+            [
+                "8ee67ed0705459a4"
+            ]
+        ]
+    },
+    {
+        "id": "64ad80cb460a4886",
+        "type": "function",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "Humidity",
+        "func": "msg.payload = msg.payload.humidity;\nreturn msg;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 300,
+        "wires": [
+            [
+                "9917d5cf4e8bae52"
+            ]
+        ]
+    },
+    {
+        "id": "3812bfa70928c935",
+        "type": "function",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "pH vaue",
+        "func": "msg.payload = msg.payload.ph;\nreturn msg;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 360,
+        "wires": [
+            [
+                "89b9f1271c2305f7"
+            ]
+        ]
+    },
+    {
+        "id": "bb3a7a0979a98a98",
+        "type": "function",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "TDS",
+        "func": "msg.payload = msg.payload.tds;\nreturn msg;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 420,
+        "wires": [
+            [
+                "48e681c7a851fe63"
+            ]
+        ]
+    },
+    {
+        "id": "eb473266c2da8ee7",
+        "type": "function",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "CO2",
+        "func": "msg.payload = msg.payload.co2;\nreturn msg;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 480,
+        "wires": [
+            [
+                "20de0f8af98614b8"
+            ]
+        ]
+    },
+    {
+        "id": "66ddaba79bcb4ea7",
+        "type": "function",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "Water",
+        "func": "msg.payload = msg.payload.waterlevel;\nreturn msg;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 540,
+        "wires": [
+            [
+                "06a7847145e7c7c6"
+            ]
+        ]
+    },
+    {
+        "id": "b5c45c9ed8f98c74",
+        "type": "function",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "Light",
+        "func": "msg.payload = msg.payload.lux;\nreturn msg;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 600,
+        "wires": [
+            [
+                "05bb2c96e961bb04"
+            ]
+        ]
+    },
+    {
+        "id": "4bf156393cfa9480",
+        "type": "debug",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "3f34bbd214ddab71",
+        "type": "ui_chart",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "",
+        "group": "7a574ddd70fc5f97",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "label": "Water Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 950,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e493b7ed12d8a7b",
+        "type": "file",
+        "z": "4f0ee5ecd86a0ed5",
+        "name": "Sensor Data",
+        "filename": "F:\\Projects\\Iot Smart Farm\\data.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 530,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a353edfd9d1da4a4",
+        "type": "mysql",
+        "z": "4f0ee5ecd86a0ed5",
+        "mydb": "f07ffe2c066c9bba",
+        "name": "",
+        "x": 450,
+        "y": 640,
+        "wires": [
+            [
+                "4bf156393cfa9480"
+            ]
+        ]
+    },
+    {
+        "id": "31b0f82e0b7eb5fc",
+        "type": "serial-port",
+        "serialport": "COM4",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "7a574ddd70fc5f97",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "7ac0cd9898bea264",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f07ffe2c066c9bba",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "localhost",
+        "port": "3306",
+        "db": "iot",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "7ac0cd9898bea264",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
