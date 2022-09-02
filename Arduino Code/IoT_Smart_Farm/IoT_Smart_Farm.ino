@@ -16,7 +16,7 @@ BH1750 lightMeter(0x5C); // address of the light sensor. SDA to (20) and SCL to 
 int gas, co2lvl;
 
 // configure the ph sensor
-float calibration_value = 21.34;
+float calibration_value = 21.34 -.5;
 int phval = 0; 
 unsigned long int avgval; 
 int buffer_arr[10],temp;
@@ -107,6 +107,6 @@ for(int i=0;i<10;i++)
  Serial.print(lux);
  Serial.print("}");
  Serial.println();
- delay(3500); // delay between reading each sensor data
+ delay(60000); // delay between reading each sensor data
 }
 }
